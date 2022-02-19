@@ -27,7 +27,7 @@ for (x, y, w, h) in faces:
     im2_fg = cv2.bitwise_and(img, img2, mask=mask)
     cv2.imshow('img_fg', im2_fg)
     
-    
+
     
     # 눈 찾기
     # roi_color = img[y:y + h, x:x + w]
