@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<script src="/jquery-3.6.0.min.js"></script>
+<script src="/Tween.js"></script>
+<script src="/Sequence.js"></script>
+<script src="/Parallel.js"></script>
+<script>
+	
+	function myclick() {
+		var i = document.getElementById('whang');
+		var t = new Tween(i.style, 'top', Tween.regularEaseOut, 0, 500, 1, 'px');
+		t.start();
+	}
+	
+	function myserial() {
+		var i = document.getElementById('whang');
+		
+		var seq = new Sequence();
+		
+		seq.addChild(new Tween(i.style, 'left', Tween.regularEaseOut, 0, 500, 1, 'px'));
+		seq.addChild(new Tween(i.style, 'top', Tween.regularEaseOut, 0, 500, 1, 'px'));
+		
+		seq.start();
+	}
+	
+	function myparallel() {
+		var i = document.getElementById('whang');
+		
+		var p = new Parallel();
+		
+		var XTween = new Tween(i.style, 'left', Tween.regularEaseOut, 0, 500, 1, 'px');
+		var YTween = new Tween(i.style, 'top', Tween.regularEaseOut, 0, 500, 1, 'px');
+		
+		p.addChild(XTween);
+		p.addChild(YTween);
+		
+		p.start();
+		 
+	}
+	
+</script>
+<body >
+	<img src="images/h_왕.png" id="whang"  style="position: relative; left: 0px; display:block;"/>
+	<input type="button" value="move" onclick="myparallel();"/>
+</body>
+</html>

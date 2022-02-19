@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	function myinit() {
+		mymal();
+// 		myrender();
+	}
+	
+	function mymal() {
+		var obj_mal = document.getElementById('div_mal');
+		var text = "";
+		
+		for (let i = 0; i < 10; i++) {
+			for (let j = 0; j < 9; j++) {
+				text += "<img class='img_mal' style='position:absolute; left:" + (52 * j) + "px; top:" + (44 * i) + "px;' src='images/" + arr2D[i][j] + ".png' title=' " + i + +"," + j + "' onclick='myclick();'/>";
+			}
+		}
+		
+		obj_mal.innerHTML = text;
+	}
+	
+	function myclick() {
+		alert("click");
+	}
+	function myrender() {
+		var obj_mal = document.getElementById('div_mal');
+		var text = "";
+		
+		for (let i = 0; i < 10; i++) {
+			for (let j = 0; j < 9; j++) {
+				text += "<img style='position:absolute; left:" + (52 * j) + "px; top:" + (44 * i) + "px;' src='images/" + arr2D[i][j] + ".png'/>";
+			}
+		}
+		
+		obj_mal.innerHTML = text;
+	}
+</script>
+</head>
+<body onload="myinit();">
+	<img style="position:absolute;" src="images/janggipan.png"/>
+	<div id="div_mal" style="position:absolute;">
+	</div>
+</body>
+</html>

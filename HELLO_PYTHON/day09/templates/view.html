@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+view
+{{a}}
+<br/>
+
+{% for i in b %}
+{{ i }} <br/>
+{% endfor %}
+
+<br/>
+
+{% for key, value in c.items() %}
+	{{ key }}, {{ value }}
+	
+{% endfor %}
+<br/>
+
+{% for i in d %}
+	{% for key, value in i.items() %}
+		{{ key }}, {{ value }}
+	{% endfor %}
+	<br/>	
+{% endfor %}
+
+</body>
+</html>
